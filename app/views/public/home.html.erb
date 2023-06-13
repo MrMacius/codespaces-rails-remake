@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <div id="searchBar">
+        <div id="autorSearch">
+            <button type="button">SEARCH BY AUTHOR</button> <input type="text">
+        </div>
+        <div id="titleSearch">
+            <button type="button">SEARCH BY TITLE</button> <input type="text">
+        </div>
+        <div id="tagSearch">
+           <button type="button">SEARCH BY TAG</button> <input type="text">
+        </div>
+    </div>
+    <div id="mainBoardBackground">
+        <div id="mainMargin">
+        </div>
+        <div id="mainBoard">
+            <% @articles.each do |article| %>
+                
+                <div id="testpost">
+                    <div id="postTitle">
+                    <h3><%= article.title %></h3>
+                    </div>
+                    <div id="postCotent">
+                    <p><%= article.content %></P>
+                    <%= link_to "[Comment or see other comments]", article, class:"navbar-brand"%>
+                    </div>
+                </div>
+            <% end %>
+            </ul>
+        </div>
+        <div id="mainMargin2">
+        </div>
+    </div>
+  </body>
+</html>

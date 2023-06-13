@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CodespacesTryRails</title>
+    <title>Bogusław Łęcina LLC</title>
+    <link rel="stylesheet" href="app/stylesheets/application.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +13,32 @@
   </head>
 
   <body>
+      <div id="topBar">
+        <div id=topBarLeft >
+            <h1>Temporary Tactical Title</h1>
+        </div>
+        <% unless Current.user %>
+        <div id="topBarCentLeft">
+          <%= link_to "REGISTER", user_register_path, class:"navbar-brand"%>
+        </div>
+        <div id="topBarCentRight">
+          <%= link_to "SIGN IN", user_login_path, class:"navbar-brand"%>
+        </div>
+        <%else%>
+        <div id="topBarCentRight">
+          <%= link_to "SIGN OUT", user_logout_path, class:"navbar-brand"%>
+        </div>
+        <% end %>
+        <% if Current.user %>
+        <div id="topBarRight">
+          <%= link_to "HOME", public_home2_path, class:"navbar-brand"%>
+        </div>
+        <%else%>
+        <div id="topBarRight">
+          <%= link_to "HOME", public_home_path, class:"navbar-brand"%>
+        </div>
+        <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

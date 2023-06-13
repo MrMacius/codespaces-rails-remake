@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="logRegOuter">
+            <div id="logRegMargin">
+
+            </div>
+            <div id="logRegInner">
+                <%= form_with model: @user, url: user_login_path do |form| %>
+                    <div class=”mb-3″>
+                        <p><%= form.label :name%></p>
+                        <p><%= form.text_field :name %></p>
+                    </div>
+                    <div class=”mb-3″>
+                        <p><%= form.label :password%></p>
+                        <p><%= form.password_field :password %></p>
+                    </div>
+                    <div class=”mb-3″>
+                        <%= form.submit%>
+                    </div>
+                <% end %>
+            </div>
+            <div id="logRegMargin">
+            </div>
+        </div>
+    </body>
+</html>
