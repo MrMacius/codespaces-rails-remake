@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'session/destroy'
   get 'public/home'
   get 'public/home2'
-
+  
   get 'users/create'
   get 'users/show'
   
@@ -20,20 +20,22 @@ Rails.application.routes.draw do
   get 'articles/comments'
   get 'articles/create'
   get 'articles/newcom'
-
+  
   get "users/register"
   get "users/login"
   get "users/logout"
-
+  
 
   post "users/register" => "users#create"
   post "users/login" => "session#create"
   post "articles/newarticle" => "articles#create"
   post "articles/newcom" => "comments#create"
   delete "users/logout" => "session#destroy"
-
+  
+  resources :articles do
+    resources :comments
+  end
+  
   resources :users
-  resources :articles
-  resources :comments
   
 end
