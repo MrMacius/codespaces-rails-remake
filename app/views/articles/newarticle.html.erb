@@ -4,15 +4,15 @@
         <div id="logRegOuter">
             <div id="newPost">
                 <%= form_with model: @article do |form| %>
-                    <div class=”mb-3″>
-                        <p><%= form.label :title%>
+                    <div>
+                        <p><%= form.label :title%> 
                         <%= form.text_field :title %></p>
                     </div>
-                    <div class=”mb-3″>
+                    <div>
                         <p><%= form.label :content%></p>
-                        <p><%= form.text_area :content%></p>
+                        <p><%= form.text_area :content %></p>
 
-                    <div class=”mb-3″>
+                    <div>
                         <%= form.submit%>
                     </div>
                 <% end %>

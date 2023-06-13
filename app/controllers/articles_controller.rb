@@ -13,7 +13,9 @@ class ArticlesController < ApplicationController
       if @article.save
           redirect_to @article, notice: "POST CREATED"
       else
-          redirect_to public_home2_path, notice: "ERROR 2137"
+          #redirect_to public_home2_path, notice: "ERROR 2137"
+          flash[:alert] = "Something went wrong"
+          render :new
       end
     end
 
@@ -22,7 +24,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, "DEBIL TYMCZASOWY", :content)
+      params.require(:article).permit(:title, :content)
     end
 
 end
