@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
       @user = User.new(user_params)
           if @user.save
-              redirect_to public_home2_path, notice: "ACCOUNT CREATED!"
+              redirect_to public_home_path, notice: "ACCOUNT CREATED!"
           else
               flash[:alert] = "Something went wrong"
               render :new
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   private
 
       def user_params
-          params.require(:user).permit(:name, :password, :email, :phone)
+          params.permit(:name, :password, :email, :phone)
       end
 
 

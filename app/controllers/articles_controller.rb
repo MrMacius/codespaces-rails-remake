@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     def create
       @article = Article.new(article_params)
       if @article.save
-          redirect_to @article, notice: "POST CREATED"
+          redirect_to public_home2_path, notice: "POST CREATED"
       else
           #redirect_to public_home2_path, notice: "ERROR 2137"
           flash[:alert] = "Something went wrong"
@@ -23,8 +23,10 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    def article_params
-      params.require(:article).permit(:title, :content)
-    end
+    private
+
+      def article_params
+        params.permit(:title, :content)
+      end
 
 end
