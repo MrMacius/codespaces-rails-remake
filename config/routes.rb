@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'comments/show'
+  get 'comments/new'
+  get 'comments/create'
+  get 'comments/destroy'
   
   root "public#home"
   
