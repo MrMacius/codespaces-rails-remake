@@ -9,7 +9,8 @@ class ArticlesController < ApplicationController
     end
 
     def create
-      @article = Article.new(article_params)
+      
+      @article = Article.new(article_params.merge(author: Current.user.name).merge(authorid: Current.user.id))
       if @article.save
           redirect_to public_home2_path, notice: "POST CREATED"
       else

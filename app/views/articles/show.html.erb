@@ -2,8 +2,7 @@
 <html>
     <body>
     <div id="mainBoardBackground">
-        <div id="commMargin">
-
+            <div id="commMargin">
             </div>
             <div id="mainCommBoard">
             <h1><%= @article.title %> </h1>
@@ -13,7 +12,18 @@
             <%= @article.content%>
             <%= %>
             </div>
-
+            <div id="mainCommBoard">
+                <%= @comments.each do |comment|%>
+                 <div id="testpost">
+                    <div id="postTitle">
+                    <h3><%= comment.author %></h3>
+                    </div>
+                    <div id="postCotent">
+                    <p><%= comment.content %></P>
+                    <%= link_to "[ADD NEW COMMENT]", newcom, class:"navbar-brand"%>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     </body>
