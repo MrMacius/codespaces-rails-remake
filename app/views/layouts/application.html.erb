@@ -19,14 +19,14 @@
         </div>
         <% unless Current.user %>
         <div id="topBarCentLeft">
-          <%= link_to "REGISTER", user_register_path, class:"navbar-brand"%>
+          <%= link_to "REGISTER", users_register_path, class:"navbar-brand"%>
         </div>
         <div id="topBarCentRight">
-          <%= link_to "SIGN IN", user_login_path, class:"navbar-brand"%>
+          <%= link_to "SIGN IN", users_login_path, class:"navbar-brand"%>
         </div>
         <%else%>
         <div id="topBarCentRight">
-          <%= link_to "SIGN OUT", user_logout_path, class:"navbar-brand"%>
+          <%= link_to "SIGN OUT", users_logout_path, class:"navbar-brand"%>
         </div>
         <% end %>
         <% if Current.user %>

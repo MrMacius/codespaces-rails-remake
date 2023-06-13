@@ -6,7 +6,7 @@
 
             </div>
             <div id="logRegInner">
-                <%= form_with model: @user, url: user_login_path do |form| %>
+                <%= form_with model: @user do |form| %>
                     <div class=”mb-3″>
                         <p><%= form.label :name%></p>
                         <p><%= form.text_field :name %></p>

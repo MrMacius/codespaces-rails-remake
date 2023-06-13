@@ -1,22 +1,29 @@
 Rails.application.routes.draw do
+  
+  root "public#home"
+  
   get 'session/new'
   get 'session/create'
   get 'session/destroy'
   get 'public/home'
   get 'public/home2'
-  get 'users/new'
+
   get 'users/create'
   get 'users/show'
+  
   get 'articles/index'
-  get 'articles/new'
+  get 'articles/newarticle'
   get 'articles/create'
-  get 'articles/show'
-  root "public#home"
 
-  post "user/register" => "user#create"
-  post "user/login" => "sessions#create"
+  get "users/register"
+  get "users/login"
+  get "users/logout"
+
+
+  post "users/register" => "users#create"
+  post "users/login" => "session#create"
   post "articles/newarticle" => "articles#create"
-  delete "logout" => "sessions#destroy"
+  delete "users/logout" => "session#destroy"
 
   resources :users
   resources :articles
