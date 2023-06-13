@@ -13,7 +13,11 @@
                 <%= %>
             </div>
             <div>
-           
+           <h4>Comments</h4>
+    <%= render @article.comments %>
+
+    <h4>Add a comment:</h4>
+    <%= render 'comments/form' %>
             </div>
         </div>
     </div>
