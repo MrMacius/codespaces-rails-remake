@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   post "users/register" => "users#create"
   post "users/login" => "session#create"
-  post "newarticle" => "articles#create"
+  post "articles/newarticle" => "articles#create"
   delete "users/logout" => "session#destroy"
 
   resources :users
