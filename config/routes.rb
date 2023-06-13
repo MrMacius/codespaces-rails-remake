@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   
   get 'articles/index'
   get 'articles/newarticle'
+  get 'articles/comments'
   get 'articles/create'
+  get 'articles/newcom'
 
   get "users/register"
   get "users/login"
@@ -23,8 +25,11 @@ Rails.application.routes.draw do
   post "users/register" => "users#create"
   post "users/login" => "session#create"
   post "articles/newarticle" => "articles#create"
+  post "articles/newcom" => "comments#create"
   delete "users/logout" => "session#destroy"
 
   resources :users
   resources :articles
+  resources :comments
+  
 end

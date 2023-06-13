@@ -5,24 +5,12 @@
             <div id="commMargin">
             </div>
             <div id="mainCommBoard">
-            <h1><%= @article.title %> </h1>
-            <h2>
-            Autor: <%= @article.author%>
-            </h2>
-            <%= @article.content%>
-            <%= %>
-            </div>
-            <div id="mainCommBoard">
-                <%= @comments.each do |comment|%>
-                 <div id="testpost">
-                    <div id="postTitle">
-                    <h3><%= comment.author %></h3>
-                    </div>
-                    <div id="postCotent">
-                    <p><%= comment.content %></P>
-                    <%= link_to "[ADD NEW COMMENT]", user_newcom_path, class:"navbar-brand" %>
-                    </div>
-                </div>
+                <h1><%= @article.title %> </h1>
+                <h2>
+                Autor: <%= @article.author%>
+                </h2>
+                <%= @article.content%>
+                <%= %>
             </div>
         </div>
     </div>
