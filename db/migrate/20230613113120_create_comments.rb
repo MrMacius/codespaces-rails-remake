@@ -5,7 +5,8 @@ class CreateComments < ActiveRecord::Migration[7.0]
       t.text :content
       t.integer :postid
       t.text :imglink
-
+      
+      t.references :article, null: false, foreign_key: true
       t.timestamps
     end
   end
