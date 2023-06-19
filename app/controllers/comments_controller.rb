@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
       
         @comment = Comment.new(comment_params.merge(article_id: 1))
         if @comment.save
-            redirect_to public_home2_path, notice: "COMMENT ADDED SUCCESFULLY"
+            redirect_to index_path, notice: "COMMENT ADDED SUCCESFULLY"
         else
             #redirect_to public_home2_path, notice: "ERROR 2137"
             flash[:alert] = "Something went wrong"
