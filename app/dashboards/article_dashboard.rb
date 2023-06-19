@@ -9,6 +9,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    Tag: Field::HasMany,
     author: Field::String,
     authorid: Field::Number,
     content: Field::Text,
@@ -26,6 +27,8 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    Comment
+    Tag
     author
   ].freeze
 
@@ -33,6 +36,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    Tag
     author
     authorid
     content
