@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
     def create
       
-        @comment = Comment.new(comments_params)
+        @comment = Comment.new(comment_params)
         if @comment.save
             redirect_to public_home2_path, notice: "COMMENT ADDED SUCCESFULLY"
         else
