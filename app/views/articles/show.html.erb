@@ -12,14 +12,11 @@
                 <%= @article.content%>
                 <%= %>
                 <h4>Add a comment:</h4>
-        <%= render 'comments/form' %>
-        <h4>Comments</h4>
+            <%= render 'comments/form' %>
+            <h4>Comments</h4>
+            <%= render @article.comments %>
             </div>
             <div>
-        <% @article.comments.each do |comment| %>
-            <%= comment.author %>
-            <%= comment.content %>
-        <%end%>
             </div>
         </div>
     </div>
