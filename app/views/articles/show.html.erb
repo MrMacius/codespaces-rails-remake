@@ -10,9 +10,12 @@
                 Autor: <%= @article.author%>
                 </h2>
                 <%= @article.content%>
-                <%= %>
-                <h4>Add a comment:</h4>
-            <%= render 'comments/form' %>
+                
+                <% if user_signed_in? %>
+                    <h4>Add a comment:</h4>
+                
+                    <%= render 'comments/form' %>
+                <% end %>
             <h4>Comments</h4>
             <%= render @article.comments %>
             </div>
