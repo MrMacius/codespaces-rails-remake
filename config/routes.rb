@@ -1,10 +1,23 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :tags
+      resources :comments
+      resources :articles
+      resources :users
+
+      root to: "tags#index"
+    end
+
+    
+  root "public#home"
+  
+  devise_for :users
+
   get 'comments/show'
   get 'comments/new'
   get 'comments/create'
   get 'comments/destroy'
   
-  root "public#home"
   
   get 'session/new'
   get 'session/create'
@@ -32,7 +45,8 @@ Rails.application.routes.draw do
   post "articles/newcom" => "comments#create"
   delete "users/logout" => "session#destroy"
 
-  resources :users
+
+  #resources :users
   resources :articles
   resources :comments
   

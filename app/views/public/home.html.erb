@@ -13,6 +13,12 @@
            <button type="button">SEARCH BY TAG</button> <input type="text">
         </div>
     </div>
+    <% if user_signed_in? %>
+    <div id="newPostBar">
+        <h2 id="newPostButton"><%= link_to "ADD NEW POST", articles_newarticle_path, class:"navbar-brand"%></h2>
+        <div>Signed in as: <%= current_user.name %></div>
+    </div>
+    <% end %>
     <div id="mainBoardBackground">
         <div id="mainMargin">
         </div>

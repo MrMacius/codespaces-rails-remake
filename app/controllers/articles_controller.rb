@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
 
     def create
       
-      @article = Article.new(article_params.merge(author: Current.user.name).merge(authorid: Current.user.id))
+      @article = Article.new(article_params.merge(author: current_user.name).merge(authorid: current_user.id))
       if @article.save
           redirect_to public_home2_path, notice: "POST CREATED"
       else
@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
     private
 
       def article_params
+        params.inspect
         params.permit(:title, :content)
       end
 
