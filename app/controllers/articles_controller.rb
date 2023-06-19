@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
       @article = Article.new
     end
 
+    
+
     def create
       
       @article = Article.new(article_params.merge(author: current_user.name).merge(authorid: current_user.id))
