@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
 
     def create
       
-        @comment = Comment.new(comment_params).merge(article_id: 1)
+        @comment = Comment.new(comment_params.merge(article_id: 1))
         if @comment.save
             redirect_to public_home2_path, notice: "COMMENT ADDED SUCCESFULLY"
         else
