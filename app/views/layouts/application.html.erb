@@ -33,15 +33,11 @@
         </div>
         <% end %>
 
-        <% if Current.user %>
+        
         <div id="topBarRight">
-          <%= link_to "HOME", public_home2_path, class:"navbar-brand"%>
+          <%= link_to "HOME", root_path, class:"navbar-brand"%>
         </div>
-        <%else%>
-        <div id="topBarRight">
-          <%= link_to "HOME", public_home_path, class:"navbar-brand"%>
-        </div>
-        <% end %>
+        
     </div>
     <%= yield %>
   </body>

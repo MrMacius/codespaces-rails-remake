@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
       def article_params
         params.inspect
-        params.permit(:title, :content)
+        params.permit(:title, :content, :status)
       end
 
 end

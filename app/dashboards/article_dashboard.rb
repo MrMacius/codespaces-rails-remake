@@ -27,9 +27,8 @@ class ArticleDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    Comment
-    Tag
     author
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

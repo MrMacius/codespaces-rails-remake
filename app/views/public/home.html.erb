@@ -24,16 +24,19 @@
         </div>
         <div id="mainBoard">
             <% @articles.each do |article| %>
-                
-                <div id="testpost">
-                    <div id="postTitle">
-                    <h3><%= article.title %></h3>
-                    </div>
-                    <div id="postCotent">
-                    <p><%= article.content %></P>
-                    <%= link_to "[Comment or see other comments]", article, class:"navbar-brand"%>
-                    </div>
-                </div>
+                <% unless article.archived? %>
+                    <% if (!article.private? || (user_signed_in? && current_user.id == article.authorid ))%>
+                                <div id="testpost">
+                                    <div id="postTitle">
+                                        <h3><%= article.title %></h3>
+                                    </div>
+                                    <div id="postCotent">
+                                        <p><%= article.content %></P>
+                                        <%= link_to "[Comment or see other comments]", article, class:"navbar-brand"%>
+                                    </div>
+                                </div>
+                    <% end%>
+                <% end %>
             <% end %>
             </ul>
         </div>

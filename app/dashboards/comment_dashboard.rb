@@ -9,6 +9,7 @@ class CommentDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    article_id: Field::Number,
     author: Field::String,
     content: Field::Text,
     imglink: Field::Text,
@@ -24,6 +25,7 @@ class CommentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    article_id
     author
     content
   ].freeze
@@ -35,7 +37,6 @@ class CommentDashboard < Administrate::BaseDashboard
     author
     content
     imglink
-    postid
     created_at
     updated_at
   ].freeze
@@ -45,9 +46,9 @@ class CommentDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     author
+    article_id
     content
     imglink
-    postid
   ].freeze
 
   # COLLECTION_FILTERS
