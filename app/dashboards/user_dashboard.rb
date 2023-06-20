@@ -13,8 +13,6 @@ class UserDashboard < Administrate::BaseDashboard
     email: Field::String,
     encrypted_password: Field::String,
     name: Field::String,
-    password: Field::String,
-    pfp: Field::Text,
     phone: Field::Number,
     remember_created_at: Field::DateTime,
     reset_password_sent_at: Field::DateTime,
@@ -30,7 +28,6 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    
     email
     encrypted_password
   ].freeze
@@ -39,12 +36,9 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    
     email
     encrypted_password
     name
-    password
-    pfp
     phone
     remember_created_at
     reset_password_sent_at
@@ -61,8 +55,6 @@ class UserDashboard < Administrate::BaseDashboard
     email
     encrypted_password
     name
-    password
-    pfp
     phone
     remember_created_at
     reset_password_sent_at

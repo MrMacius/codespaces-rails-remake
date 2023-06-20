@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
       
       @article = Article.new(article_params.merge(author: current_user.name).merge(authorid: current_user.id))
       if @article.save
-          redirect_to public_home2_path, notice: "POST CREATED"
+          redirect_to root_path, notice: "POST CREATED"
       else
           #redirect_to public_home2_path, notice: "ERROR 2137"
           flash[:alert] = "Something went wrong"

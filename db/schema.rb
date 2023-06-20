@@ -44,7 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_182824) do
     t.integer "authorid"
     t.string "title"
     t.text "content"
-    t.text "imglink"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,25 +52,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_182824) do
   create_table "comments", force: :cascade do |t|
     t.string "author"
     t.text "content"
-    t.text "imglink"
     t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "content"
-    t.integer "postid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password"
     t.integer "phone"
-    t.text "pfp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

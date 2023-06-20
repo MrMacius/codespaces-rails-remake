@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   namespace :admin do
-      resources :tags
+     # resources :tags
+     resources :users
       resources :comments
       resources :articles
-      resources :users
 
-      root to: "tags#index"
+      root to: "users#index"
     end
 
     

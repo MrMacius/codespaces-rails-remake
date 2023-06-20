@@ -15,7 +15,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     imglink: Field::Text,
     status: Field::String,
     title: Field::String,
-    image: Field::Attachment,
+    image: Field::ActiveStorage,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

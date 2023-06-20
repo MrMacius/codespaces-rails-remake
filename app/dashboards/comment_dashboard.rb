@@ -12,7 +12,6 @@ class CommentDashboard < Administrate::BaseDashboard
     article_id: Field::Number,
     author: Field::String,
     content: Field::Text,
-    imglink: Field::Text,
     postid: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -34,9 +33,9 @@ class CommentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    article_id
     author
     content
-    imglink
     created_at
     updated_at
   ].freeze
@@ -48,7 +47,6 @@ class CommentDashboard < Administrate::BaseDashboard
     author
     article_id
     content
-    imglink
   ].freeze
 
   # COLLECTION_FILTERS
