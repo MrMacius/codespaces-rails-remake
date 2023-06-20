@@ -2,6 +2,7 @@
 <html>
 
   <body>
+        
     <div id="searchBar">
          
         <%= search_form_for @search, url: root_path do |search_form| %>
@@ -23,10 +24,17 @@
     </div>
     <% if user_signed_in? %>
     <div id="newPostBar">
+
         <h2 id="newPostButton"><%= link_to "ADD NEW POST", articles_newarticle_path, class:"navbar-brand"%></h2>
         <div>Signed in as: <%= current_user.name %></div>
+        <div>
+            <p class-"notice"><%= notice %></p>
+            <p class-"alert"><%= alert %></p>
+        </div>
+        
     </div>
     <% end %>
+
     <div id="mainBoardBackground">
         <div id="mainMargin">
         </div>
@@ -48,10 +56,7 @@
             <% end %>
             </ul>
         </div>
-        <div>
-            <p class-"notice"><%= notice %></p>
-            <p class-"alert"><%= alert %></p>
-        </div>
+        
     </div>
   </body>
 </html>
