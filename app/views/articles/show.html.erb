@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <body>
+   
     <div id="mainBoardBackground">
+            
             <div id="commMargin">
             </div>
             <div id="mainCommBoard">
@@ -9,8 +11,15 @@
                 <h2>
                 Autor: <%= @article.author%>
                 </h2>
+                <%= image_tag @article.image if @article.image.present? %>
+                <br>
+
                 <%= @article.content%>
-                
+                <br>
+                <br>
+                <% if (user_signed_in? && current_user.id == @article.authorid ) %>
+                <%= link_to "Edit Post", edit_article_path(@article) %>
+                <% end %>
                 <% if user_signed_in? %>
                     <h4>Add a comment:</h4>
                 

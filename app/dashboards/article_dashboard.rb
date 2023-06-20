@@ -9,16 +9,17 @@ class ArticleDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    Tag: Field::HasMany,
     author: Field::String,
     authorid: Field::Number,
     content: Field::Text,
     imglink: Field::Text,
     status: Field::String,
     title: Field::String,
+    image: Field::Attachment,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
+
 
   # COLLECTION_ATTRIBUTES
   # an array of attributes that will be displayed on the model's index page.
@@ -35,13 +36,12 @@ class ArticleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    Tag
+    title
     author
     authorid
     content
-    imglink
     status
-    title
+    image
     created_at
     updated_at
   ].freeze
@@ -50,13 +50,12 @@ class ArticleDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    Tag
     author
     authorid
-    content
-    imglink
-    status
     title
+    content
+    image
+    status
   ].freeze
 
   # COLLECTION_FILTERS

@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-
+    #before_filter :set_search
+    
     def index
       @articles = Article.all
     end
@@ -22,6 +23,21 @@ class ArticlesController < ApplicationController
       end
     end
 
+    def edit
+      @article = Article.find(params[:id])
+    end
+  
+    def update
+      @article = Article.find(params[:id])
+  
+      if @article.update(article_params.merge(author: current_user.name).merge(authorid: current_user.id))
+        redirect_to @article
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    end
+
+
     def show
       @article = Article.find(params[:id])
     end
@@ -30,7 +46,7 @@ class ArticlesController < ApplicationController
 
       def article_params
         params.inspect
-        params.permit(:title, :content, :status)
-      end
+        params.permit(:title, :content, :status, :image)
+      end   
 
 end

@@ -55,6 +55,8 @@ gem 'devise', '~> 4.9', '>= 4.9.2'
 
 gem "administrate"
 
+gem "ransack"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -82,3 +84,11 @@ group :test do
 end
 
 gem "device", "~> 0.0.0"
+
+gem "aws-sdk-s3", require: false
+gem 'administrate-field-active_storage'
+gem "image_processing"
+
+#gem "azure-storage-blob" require: false
+
+

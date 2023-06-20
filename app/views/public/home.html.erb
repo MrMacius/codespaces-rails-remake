@@ -3,15 +3,23 @@
 
   <body>
     <div id="searchBar">
-        <div id="autorSearch">
-            <button type="button">SEARCH BY AUTHOR</button> <input type="text">
-        </div>
-        <div id="titleSearch">
-            <button type="button">SEARCH BY TITLE</button> <input type="text">
-        </div>
-        <div id="tagSearch">
-           <button type="button">SEARCH BY TAG</button> <input type="text">
-        </div>
+         
+        <%= search_form_for @search, url: root_path do |search_form| %>
+
+        <%= search_form.label :title_cont  %> :
+        <%= search_form.search_field :title_cont %>
+
+
+        <%= search_form.label :content_cont  %> :
+        <%= search_form.search_field :content_cont %>
+
+       
+        <%= search_form.label :author_cont  %> :
+        <%= search_form.search_field :author_cont %>
+
+        <%= search_form.submit %>
+        <% end %>
+
     </div>
     <% if user_signed_in? %>
     <div id="newPostBar">
